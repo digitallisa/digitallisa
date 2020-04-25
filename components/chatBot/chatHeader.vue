@@ -3,9 +3,6 @@
     <v-container>
       <v-row align="center">
         <v-col cols="auto">
-          <v-icon large>mdi-face-woman</v-icon>
-        </v-col>
-        <v-col cols="auto">
           <div class="font-weight-bold">
             DIGITALLISA
           </div>

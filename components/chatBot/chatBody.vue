@@ -7,11 +7,24 @@
             <chat-request :question="request.question" />
           </v-col>
         </v-row>
-        <v-row>
+        <v-row justify="end">
           <v-col
             v-for="(answer, answerIndex) in request.answers"
             :key="answerIndex"
-          ></v-col>
+            cols="12"
+          >
+            <v-row justify="end">
+              <v-col cols="auto">
+                <v-btn
+                  rounded
+                  :disabled="!answer.clickable"
+                  @click="nextQuestion"
+                >
+                  {{ answer.text }}
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-col>
         </v-row>
       </v-col>
     </v-row>
@@ -38,15 +51,32 @@ export default {
           answers: [
             {
               text: 'Yes',
-              clickable: true
+              clickable: false
             },
             {
               text: 'No',
-              clickable: false
+              clickable: true
             }
           ]
         }
       ]
+    }
+  },
+  methods: {
+    nextQuestion() {
+      this.chatRequests.push({
+        question: 'Do you want to know more about digital services?',
+        answers: [
+          {
+            text: 'Yes',
+            clickable: true
+          },
+          {
+            text: 'No',
+            clickable: true
+          }
+        ]
+      })
     }
   }
 }
