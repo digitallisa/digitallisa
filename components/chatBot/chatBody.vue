@@ -47,26 +47,12 @@ export default {
       followingRequests: [
         {
           question:
-            'Hello there, so you wanna get your business digital during the corona crisis. I am here to help.',
+            "Hey there, I'm Lisa and ready to help you building digital customer touchpoints. They increase the user experience for your customers and thus will likely result in more customers.",
           answers: []
         },
         {
           question:
-            'To get started. Do you have any digital appearences (e.g. Website, Facebook Page) online?',
-          answers: [
-            {
-              text: 'Yes',
-              chosen: false
-            },
-            {
-              text: 'No',
-              chosen: true
-            }
-          ],
-          answered: false
-        },
-        {
-          question: 'Do you want to know more about digital services?',
+            "Are you ready? I would guide you through some questions now. Don't worry, it does not take long.",
           answers: [
             {
               text: 'Yes',
@@ -80,26 +66,22 @@ export default {
           answered: false
         },
         {
-          question: 'Do know Google Maps and you want to know more about that?',
+          question: 'Do you have a Google My Business entry?',
           answers: [
             {
               text: 'Yes',
-              chosen: true
+              chosen: false
             },
             {
               text: 'No',
-              chosen: false
+              chosen: true
             }
           ],
           answered: false
         },
         {
           question:
-            'Google Maps is a map service by Google where people can find your place on a map.',
-          answers: []
-        },
-        {
-          question: 'Do you want to have you place listed there?',
+            'Alright, that is no problem! Lets create one together :) A Google My Business Entry helps you to be listed in the Google search engine if someone searches for your business. It would also show your current opening times, address, telephone number etc. That helps you to communicate your current business terms like opening times to your customers. Especially due to the Corona crisis people are unsure whether local business are open or not. ',
           answers: [
             {
               text: 'Yes',
