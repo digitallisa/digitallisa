@@ -112,7 +112,8 @@ export default {
           answered: false
         },
         {
-          question: null,
+          question:
+            'You can now either continue chatting with me so I can help you set everything up or you can click on "Do it now!" and we will do it for you.',
           answers: [
             {
               text: 'Continue chatting :-)',
