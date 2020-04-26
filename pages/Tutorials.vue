@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import TutorialCard from '~/components/Tutorial/TutorialCards.vue'
+import TutorialCard from '~/components/tutorials/tutorialCard.vue'
 export default {
   components: {
     TutorialCard
