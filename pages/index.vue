@@ -4,12 +4,16 @@
       <main-container />
     </v-row>
     <v-row>
-      <v-col v-for="(tutorial, index) in tutorials" :key="index" cols="4">
-        <tutorial-card
-          :text="tutorial.title"
-          :beschreibung="tutorial.description"
-        />
-      </v-col>
+      <v-container>
+        <v-row>
+          <v-col v-for="(tutorial, index) in tutorials" :key="index" cols="4">
+            <tutorial-card
+              :text="tutorial.title"
+              :beschreibung="tutorial.description"
+            />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-row>
   </v-container>
 </template>
@@ -27,26 +31,6 @@ export default {
     return {
       tutorials: [
         {
-          title: 'Create a Website',
-          description:
-            'In this tutorial you learn how to create your own website'
-        },
-        {
-          title: 'Google Ads',
-          description:
-            'In this tutorial you can learn how to promote yourself with online adversitments'
-        },
-        {
-          title: 'Google Business',
-          description:
-            'In this tutorial you can learn how to promote you business on all Google applications'
-        },
-        {
-          title: 'Google Search',
-          description:
-            'In this tutorial you can learn how to be at the top of the google search results'
-        },
-        {
           title: 'Facebook',
           description:
             'In this tutorial you can lean how to set up the Facebook page for your business'
@@ -60,11 +44,6 @@ export default {
           title: 'LinkedIn',
           description:
             'In this tutorial you can lean how to set up the LinkedIn page for your business'
-        },
-        {
-          title: 'Twitter',
-          description:
-            'In this tutorial you can lean how to set up the Twitter page for your business'
         }
       ]
     }

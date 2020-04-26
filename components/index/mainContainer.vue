@@ -2,7 +2,7 @@
   <v-container fluid class="pa-0 ma-0">
     <v-row class="light-blue" align="center" style="height:400px" no-gutters>
       <v-col cols="6">
-        <v-container class="ml-">
+        <v-container class="ml-6">
           <v-row justify="center" dense>
             <v-col cols="12">
               <h4 class="white--text display-3 font-weight-black">
