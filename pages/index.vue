@@ -3,15 +3,71 @@
     <v-row no-gutters>
       <main-container />
     </v-row>
+    <v-row>
+      <v-col v-for="(tutorial, index) in tutorials" :key="index" cols="4">
+        <tutorial-card
+          :text="tutorial.title"
+          :beschreibung="tutorial.description"
+        />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import MainContainer from '~/components/index/mainContainer.vue'
+import TutorialCard from '~/components/index/tutorialCard.vue'
 
 export default {
   components: {
-    MainContainer
+    MainContainer,
+    TutorialCard
+  },
+  data() {
+    return {
+      tutorials: [
+        {
+          title: 'Create a Website',
+          description:
+            'In this tutorial you learn how to create your own website'
+        },
+        {
+          title: 'Google Ads',
+          description:
+            'In this tutorial you can learn how to promote yourself with online adversitments'
+        },
+        {
+          title: 'Google Business',
+          description:
+            'In this tutorial you can learn how to promote you business on all Google applications'
+        },
+        {
+          title: 'Google Search',
+          description:
+            'In this tutorial you can learn how to be at the top of the google search results'
+        },
+        {
+          title: 'Facebook',
+          description:
+            'In this tutorial you can lean how to set up the Facebook page for your business'
+        },
+        {
+          title: 'Instagram',
+          description:
+            'In this tutorial you can lean how to set up the Instagram page for your business'
+        },
+        {
+          title: 'LinkedIn',
+          description:
+            'In this tutorial you can lean how to set up the LinkedIn page for your business'
+        },
+        {
+          title: 'Twitter',
+          description:
+            'In this tutorial you can lean how to set up the Twitter page for your business'
+        }
+      ]
+    }
   }
 }
 </script>
