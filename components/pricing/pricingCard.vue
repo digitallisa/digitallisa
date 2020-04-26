@@ -43,7 +43,7 @@
     </div>
     <div class="fill-height"></div>
     <v-divider></v-divider>
-    <v-row justify="center" align="center">
+    <v-row style="height:100px" justify="center" align="center">
       <v-col cols="auto">
         <div class="title">
           {{ plan.priceTitle }}

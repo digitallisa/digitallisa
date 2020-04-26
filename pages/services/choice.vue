@@ -66,7 +66,8 @@ export default {
     services: [
       {
         title: 'Google My Business Entry',
-        subtitle: 'Set-up Google Business Account'
+        subtitle: 'Set-up Google Business Account',
+        link: '/tutorials/googlebusiness'
       },
       {
         title: 'Facebook Page',
@@ -87,7 +88,6 @@ export default {
     serviceChosen() {
       this.chosenServices.push({
         title: 'Google Business',
-        link: '/tutorials/googlebusiness',
         price: 50
       })
     }
