@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <h1>Pricing</h1>
+        <h1>Select the Services you need:</h1>
         <v-card>
           <v-list shaped>
             <v-list-item-group v-model="model" multiple>
@@ -13,7 +13,7 @@
                   v-else
                   :key="`item-${i}`"
                   :value="item"
-                  active-class="deep-purple--text text--accent-4"
+                  active-class="blue--text text--accent-4"
                 >
                   <template v-slot:default="{ active, toggle }">
                     <v-list-item-content>
@@ -21,10 +21,11 @@
                     </v-list-item-content>
 
                     <v-list-item-action>
+                      <!-- <v-switch value input-value="true" @click="toggle"></v-switch> -->
                       <v-checkbox
                         :input-value="active"
                         :true-value="item"
-                        color="deep-purple accent-4"
+                        color="deep-blue accent-4"
                         @click="toggle"
                       ></v-checkbox>
                     </v-list-item-action>
@@ -34,18 +35,18 @@
             </v-list-item-group>
           </v-list>
         </v-card>
-        <v-card>
-          <v-list-item three-line>
-            <v-list-item-content>
-              <v-list-item-title class="headline mb-1">Price</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-card-actions>
-            <v-btn text>Buy</v-btn>
-            <v-btn text>Button</v-btn>
-          </v-card-actions>
-        </v-card>
+        <v-col>
+          <v-card>
+            <v-list-item three-line>
+              <v-list-item-content>
+                <v-list-item-title class="headline">Price</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-card-actions>
+              <v-btn text>Buy</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
       </v-col>
     </v-row>
   </v-container>
@@ -63,8 +64,8 @@ export default {
       'LinkedIn',
       'Twitter',
       '',
-      'Maintenance Service',
-      'Online Ads Service'
+      'Continous Maintenance Service',
+      'Continous Online Ads Service'
     ],
     model: ['Carrots']
   })
