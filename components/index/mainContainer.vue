@@ -12,7 +12,7 @@
             <v-col cols="12">
               <v-row>
                 <v-col cols="auto">
-                  <v-btn to="/chatbot" nuxt x-large filled>
+                  <v-btn to="/chatbot" nuxt x-large rounded>
                     Chat With Lisa
                   </v-btn>
                 </v-col>
