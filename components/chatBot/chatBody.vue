@@ -4,7 +4,10 @@
       <v-col>
         <v-row dense>
           <v-col>
-            <chat-request :question="request.question" />
+            <chat-request
+              v-if="request.question !== null"
+              :question="request.question"
+            />
           </v-col>
         </v-row>
         <v-row justify="end">
@@ -16,6 +19,8 @@
             <v-row justify="end" no-gutters>
               <v-col cols="auto">
                 <v-btn
+                  nuxt
+                  :to="answer.link"
                   large
                   rounded
                   :class="{
@@ -90,6 +95,21 @@ export default {
             {
               text: 'No',
               chosen: false
+            }
+          ],
+          answered: false
+        },
+        {
+          question: null,
+          answers: [
+            {
+              text: 'Continue chatting :-)',
+              chosen: true
+            },
+            {
+              text: 'Do it now!',
+              chosen: false,
+              link: '/services/choice'
             }
           ],
           answered: false
