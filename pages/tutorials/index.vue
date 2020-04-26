@@ -61,6 +61,11 @@ export default {
           title: 'Twitter',
           description:
             'In this tutorial you can lean how to set up the Twitter page for your business'
+        },
+        {
+          title: 'COVID-19 Measures',
+          description:
+            'Here we will post solutions for the current COVID-19 measures of each country'
         }
       ]
     }
