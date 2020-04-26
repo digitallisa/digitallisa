@@ -25,11 +25,6 @@ knowledgebase with all available online channels business owners could make use 
         />
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12">
-        <team-card title="The Team" />
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 

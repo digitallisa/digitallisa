@@ -10,7 +10,9 @@
         ></v-img>
       </nuxt-link>
       <div class="display-1 text-uppercase font-weight-bold">DIGITALLISA</div>
-      <div></div>
+      <v-spacer></v-spacer>
+      <v-btn text to="/tutorials" nuxt>Tutorials</v-btn>
+      <v-btn text to="/about">About Us</v-btn>
       <v-spacer></v-spacer>
       <v-btn outlined>
         Sign Up
