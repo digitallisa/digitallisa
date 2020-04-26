@@ -1,5 +1,5 @@
 <template>
-  <v-card color="blue" max-width="75%">
+  <v-card color="chat-bubble cyan darken-1" max-width="75%">
     <v-container>
       <v-row dense>
         <v-col class="white--text"> {{ question }}</v-col>
@@ -19,4 +19,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.chat-bubble {
+  border-top-left-radius: 0px !important;
+}
+</style>

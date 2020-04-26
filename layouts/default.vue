@@ -10,6 +10,7 @@
         ></v-img>
       </nuxt-link>
       <div class="display-1 text-uppercase font-weight-bold">DIGITALLISA</div>
+      <div></div>
       <v-spacer></v-spacer>
       <v-btn outlined>
         Sign Up
