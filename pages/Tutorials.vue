@@ -1,29 +1,11 @@
 <template>
   <v-container>
     <v-row align="stretch">
-      <v-col cols="3" align-self="stretch">
-        <tutorial-card :text="google" :beschreibung="b1" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="web" :beschreibung="b2" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="business" :beschreibung="b3" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="suchmaschine" :beschreibung="b4" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="facebook" :beschreibung="b5" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="instagram" :beschreibung="b6" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="linkedIn" :beschreibung="b7" />
-      </v-col>
-      <v-col cols="3">
-        <tutorial-card :text="twitter" :beschreibung="b8" />
+      <v-col v-for="(tutorial, index) in tutorials" :key="index" cols="4">
+        <tutorial-card
+          :text="tutorial.title"
+          :beschreibung="tutorial.description"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -37,30 +19,48 @@ export default {
   },
   data() {
     return {
-      web: 'Google Ads',
-      google: 'Create a Website',
-      socialmedia: 'Social Media',
-      business: 'Google Business',
-      suchmaschine: 'Google Search',
-      facebook: 'Facebook',
-      instagram: 'Instagram',
-      linkedIn: 'LinkedIn',
-      twitter: 'Twitter',
-      b1: 'In this tutorial you learn how to create your own website',
-      b2:
-        'In this tutorial you can learn how to promote yourself with online adversitments',
-      b3:
-        'In this tutorial you can learn how to promote you business on all Google applications',
-      b4:
-        'In this tutorial you can learn how to be at the top of the google search results',
-      b5:
-        'In this tutorial you can lean how to set up the Facebook page for your business',
-      b6:
-        'In this tutorial you can learn how to set up the Instagram page for your business',
-      b7:
-        'In this tutorial you can learn how to set up the LinkedIn page for your business',
-      b8:
-        'In this tutorial you can learn how to set up the Twitter page for your business'
+      tutorials: [
+        {
+          title: 'Create a Website',
+          description:
+            'In this tutorial you learn how to create your own website'
+        },
+        {
+          title: 'Google Ads',
+          description:
+            'In this tutorial you can learn how to promote yourself with online adversitments'
+        },
+        {
+          title: 'Google Business',
+          description:
+            'In this tutorial you can learn how to promote you business on all Google applications'
+        },
+        {
+          title: 'Google Search',
+          description:
+            'In this tutorial you can learn how to be at the top of the google search results'
+        },
+        {
+          title: 'Facebook',
+          description:
+            'In this tutorial you can lean how to set up the Facebook page for your business'
+        },
+        {
+          title: 'Instagram',
+          description:
+            'In this tutorial you can lean how to set up the Instagram page for your business'
+        },
+        {
+          title: 'LinkedIn',
+          description:
+            'In this tutorial you can lean how to set up the LinkedIn page for your business'
+        },
+        {
+          title: 'Twitter',
+          description:
+            'In this tutorial you can lean how to set up the Twitter page for your business'
+        }
+      ]
     }
   }
 }
