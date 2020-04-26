@@ -25,17 +25,38 @@ export default {
     return {
       plans: [
         {
-          title: 'Free',
-          keyPoints: [
-            'No costs',
-            'Learn by yourself with our verified tutorials'
+          title: 'Lisa & You Do It',
+          proPoints: [
+            'Completely Free',
+            'Quick and easy process',
+            'Lisa teaches you how to do it'
+          ],
+          contraPoints: [
+            'You need to actually do it',
+            'You need to maintain it'
           ],
           priceTitle: 'Free'
         },
         {
-          title: 'Premium',
-          keyPoints: [],
-          priceTitle: 'Pay-Per-Use'
+          title: 'We Do It For You',
+          proPoints: [
+            'You pay for what you get',
+            'We create the requested page for you',
+            'We do it quick and professionally'
+          ],
+          contraPoints: ['You need to maintain it'],
+          priceTitle: 'Pay-Per-Service'
+        },
+        {
+          title: 'We Do & Maintain It For You',
+          proPoints: [
+            'You pay for what you get',
+            'We create the requested page for you',
+            'We do it quick and professionally',
+            'We maintain your requested page'
+          ],
+          contraPoints: [],
+          priceTitle: 'Subscription'
         }
       ]
     }

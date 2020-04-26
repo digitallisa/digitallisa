@@ -23,7 +23,7 @@
         <v-col cols="3">
           <v-row>
             <v-col>
-              <v-btn text>
+              <v-btn text :to="service.link" nuxt>
                 Start Tutorial Now
                 <v-icon right>mdi-arrow-right</v-icon>
               </v-btn>

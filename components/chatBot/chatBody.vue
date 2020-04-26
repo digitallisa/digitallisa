@@ -1,8 +1,12 @@
 <template>
   <v-container ref="chat" class="custom-color">
-    <v-row v-for="(request, requestIndex) in chatRequests" :key="requestIndex">
+    <v-row
+      v-for="(request, requestIndex) in chatRequests"
+      :key="requestIndex"
+      dense
+    >
       <v-col>
-        <v-row dense>
+        <v-row no-gutters>
           <v-col>
             <chat-request
               v-if="request.question !== null"
@@ -85,8 +89,16 @@ export default {
           answered: false
         },
         {
+          question: 'Alright, that is no problem! I can help you with that 😊',
+          answers: []
+        },
+        {
           question:
-            'Alright, that is no problem! Lets create one together :) A Google My Business Entry helps you to be listed in the Google search engine if someone searches for your business. It would also show your current opening times, address, telephone number etc. That helps you to communicate your current business terms like opening times to your customers. Especially due to the Corona crisis people are unsure whether local business are open or not. ',
+            'A Google My Business Entry helps you to be listed in the Google search engine if someone searches for your business. It would also show your current opening times, address, telephone number etc. That helps you to communicate your current business terms like opening times to your customers. Especially due to the Corona crisis people are unsure whether local business are open or not.',
+          answers: []
+        },
+        {
+          question: 'Do you want to create one?',
           answers: [
             {
               text: 'Yes',
@@ -104,11 +116,11 @@ export default {
           answers: [
             {
               text: 'Continue chatting :-)',
-              chosen: true
+              chosen: false
             },
             {
               text: 'Do it now!',
-              chosen: false,
+              chosen: true,
               link: '/services/choice'
             }
           ],
