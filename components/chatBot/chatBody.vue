@@ -1,17 +1,34 @@
 <template>
-  <v-container class="custom-color">
+  <v-container ref="chat" class="custom-color">
     <v-row v-for="(request, requestIndex) in chatRequests" :key="requestIndex">
       <v-col>
-        <v-row>
+        <v-row dense>
           <v-col>
             <chat-request :question="request.question" />
           </v-col>
         </v-row>
-        <v-row>
+        <v-row justify="end">
           <v-col
             v-for="(answer, answerIndex) in request.answers"
             :key="answerIndex"
-          ></v-col>
+            cols="12"
+          >
+            <v-row justify="end" dense>
+              <v-col cols="auto">
+                <v-btn
+                  rounded
+                  :class="{
+                    primary: answer.chosen && !request.answered,
+                    'disabled-color-button': answer.chosen && request.answered
+                  }"
+                  :disabled="!answer.chosen && request.answered"
+                  @click="nextQuestion"
+                >
+                  {{ answer.text }}
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-col>
         </v-row>
       </v-col>
     </v-row>
@@ -26,7 +43,8 @@ export default {
   },
   data() {
     return {
-      chatRequests: [
+      chatRequests: [],
+      followingRequests: [
         {
           question:
             'Hello there, so you wanna get your business digital during the corona crisis. I am here to help.',
@@ -38,15 +56,95 @@ export default {
           answers: [
             {
               text: 'Yes',
-              clickable: true
+              chosen: false
             },
             {
               text: 'No',
-              clickable: false
+              chosen: true
             }
-          ]
+          ],
+          answered: false
+        },
+        {
+          question: 'Do you want to know more about digital services?',
+          answers: [
+            {
+              text: 'Yes',
+              chosen: true
+            },
+            {
+              text: 'No',
+              chosen: false
+            }
+          ],
+          answered: false
+        },
+        {
+          question: 'Do know Google Maps and you want to know more about that?',
+          answers: [
+            {
+              text: 'Yes',
+              chosen: true
+            },
+            {
+              text: 'No',
+              chosen: false
+            }
+          ],
+          answered: false
+        },
+        {
+          question:
+            'Google Maps is a map service by Google where people can find your place on a map.',
+          answers: []
+        },
+        {
+          question: 'Do you want to have you place listed there?',
+          answers: [
+            {
+              text: 'Yes',
+              chosen: true
+            },
+            {
+              text: 'No',
+              chosen: false
+            }
+          ],
+          answered: false
         }
       ]
+    }
+  },
+  mounted() {
+    this.nextQuestion()
+  },
+  methods: {
+    nextQuestion() {
+      this.markCurrentQuestionAsDone()
+      if (
+        this.followingRequests !== null &&
+        this.followingRequests.length !== 0
+      ) {
+        const currentRequest = this.followingRequests.shift()
+        this.chatRequests.push(currentRequest)
+        this.$nextTick(() => {
+          const chatBody = this.$refs.chat
+          chatBody.scrollTop = chatBody.scrollHeight
+        })
+        if (currentRequest.answers.length === 0) {
+          setTimeout(() => {
+            this.nextQuestion()
+          }, 1000)
+        }
+      }
+    },
+    markCurrentQuestionAsDone() {
+      if (
+        this.chatRequests.length !== 0 &&
+        this.chatRequests[this.chatRequests.length - 1].answers !== null &&
+        this.chatRequests[this.chatRequests.length - 1].answers.length !== 0
+      )
+        this.chatRequests[this.chatRequests.length - 1].answered = true
     }
   }
 }
@@ -55,5 +153,11 @@ export default {
 <style>
 .custom-color {
   background-color: #eeeeee;
+  height: 75vh;
+  overflow: scroll;
+}
+.disabled-color-button {
+  background-color: #82b1ff !important;
+  pointer-events: none;
 }
 </style>
