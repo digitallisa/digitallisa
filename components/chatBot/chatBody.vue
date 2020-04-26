@@ -13,12 +13,12 @@
             :key="answerIndex"
             cols="12"
           >
-            <v-row justify="end" dense>
+            <v-row justify="end" no-gutters>
               <v-col cols="auto">
                 <v-btn
+                  large
                   rounded
                   :class="{
-                    primary: answer.chosen && !request.answered,
                     'disabled-color-button': answer.chosen && request.answered
                   }"
                   :disabled="!answer.chosen && request.answered"
@@ -52,7 +52,7 @@ export default {
         },
         {
           question:
-            'To get started. Do you have any digial appearences (e.g. Website, Facebook Page) online?',
+            'To get started. Do you have any digital appearences (e.g. Website, Facebook Page) online?',
           answers: [
             {
               text: 'Yes',
@@ -154,7 +154,7 @@ export default {
 .custom-color {
   background-color: #eeeeee;
   height: 75vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .disabled-color-button {
   background-color: #82b1ff !important;

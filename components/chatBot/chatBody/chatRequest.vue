@@ -1,5 +1,5 @@
 <template>
-  <v-card color="chat-bubble cyan darken-1" max-width="75%">
+  <v-card color="chat-bubble blue darken-4" max-width="75%">
     <v-container>
       <v-row dense>
         <v-col class="white--text"> {{ question }}</v-col>

@@ -5,6 +5,7 @@
         <tutorial-card
           :text="tutorial.title"
           :beschreibung="tutorial.description"
+          :link="tutorial.link"
         />
       </v-col>
     </v-row>
@@ -33,7 +34,8 @@ export default {
         {
           title: 'Google Business',
           description:
-            'In this tutorial you can learn how to promote you business on all Google applications'
+            'In this tutorial you can learn how to promote you business on all Google applications',
+          link: '/tutorials/googlebusiness'
         },
         {
           title: 'Google Search',

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar :clipped-left="clipped" flat color="white" fixed app>
+    <v-app-bar flat color="white" fixed app>
       <nuxt-link style="width:50px" to="/">
         <v-img
           :src="require('~/assets/digitalLisaBlank.svg')"
@@ -9,10 +9,18 @@
           position="start start"
         ></v-img>
       </nuxt-link>
-      <div class="display-1 text-uppercase font-weight-bold">DIGITALLISA</div>
+      <div class="display-1 blue--text text--darken-4 font-weight-black">
+        digitalLisa
+      </div>
       <v-spacer></v-spacer>
-      <v-btn text to="/tutorials" nuxt>Tutorials</v-btn>
-      <v-btn text to="/about">About Us</v-btn>
+      <v-btn
+        v-for="(site, index) in navigationSites"
+        :key="index"
+        :to="site.page"
+        nuxt
+        text
+        >{{ site.title }}
+      </v-btn>
       <v-spacer></v-spacer>
       <v-btn outlined>
         Sign Up
@@ -21,7 +29,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer :fixed="fixed" app>
+    <v-footer app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -31,7 +39,21 @@
 export default {
   data() {
     return {
-      title: 'digitalLisa'
+      title: 'digitalLisa',
+      navigationSites: [
+        {
+          title: 'Tutorials',
+          page: '/tutorials'
+        },
+        {
+          title: 'Pricing',
+          page: '/pricing'
+        },
+        {
+          title: 'About Us',
+          page: '/about'
+        }
+      ]
     }
   }
 }

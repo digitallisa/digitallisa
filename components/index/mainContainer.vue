@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="pa-0 ma-0">
-    <v-row class="light-blue" align="center" style="height:400px" no-gutters>
+    <v-row class="blue darken-4" align="center" style="height:400px" no-gutters>
       <v-col cols="6">
         <v-container class="ml-6">
           <v-row justify="center" dense>

@@ -9,7 +9,7 @@
     <v-card-subtitle class="pb-0">{{ beschreibung }}</v-card-subtitle>
 
     <v-card-actions>
-      <v-btn text color="blue accent-4">View Tutorial</v-btn>
+      <v-btn :to="link" nuxt text color="blue accent-4">View Tutorial</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -22,6 +22,10 @@ export default {
       default: () => ''
     },
     beschreibung: {
+      type: String,
+      default: () => ''
+    },
+    link: {
       type: String,
       default: () => ''
     }
