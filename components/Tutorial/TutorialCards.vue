@@ -9,7 +9,7 @@
     </v-list-item>
 
     <v-card-actions>
-      <v-btn text color="deep-purple accent-4">Zum Tutorial</v-btn>
+      <v-btn text color="deep-purple accent-4">View Tutorial</v-btn>
     </v-card-actions>
   </v-card>
 </template>
